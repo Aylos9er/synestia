@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS variables for themes */
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-accent: #6ee7b7;
+  --border-primary: #4b5563;
+  --border-accent: #10b981;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light {
+  /* Light theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-accent: #059669;
+  --border-primary: #d1d5db;
+  --border-accent: #10b981;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.theme-win95 {
+  /* Windows 95 theme */
+  --bg-primary: #c0c0c0;
+  --bg-secondary: #c0c0c0;
+  --bg-tertiary: #808080;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-accent: #000080;
+  --border-primary: #808080;
+  --border-accent: #000080;
+  --shadow: rgba(0, 0, 0, 0.5);
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+/* Theme-aware styles */
+.themed-bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.themed-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.themed-bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.themed-text-primary {
+  color: var(--text-primary);
+}
+
+.themed-text-secondary {
+  color: var(--text-secondary);
+}
+
+.themed-text-accent {
+  color: var(--text-accent);
+}
+
+.themed-border {
+  border-color: var(--border-primary);
+}
+
+.themed-border-accent {
+  border-color: var(--border-accent);
+}
+
+/* Theme toggle button styles */
+.theme-toggle-button {
+  @apply flex items-center px-4 py-2 rounded-lg transition-all duration-200;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-primary);
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-accent);
+}
+
+/* Win95 specific styles */
+.theme-win95 .win95-inset {
+  border: 2px inset #c0c0c0;
+  background: #c0c0c0;
+}
+
+.theme-win95 .win95-outset {
+  border: 2px outset #c0c0c0;
+  background: #c0c0c0;
+}
+
+.theme-win95 .win95-window {
+  border: 2px outset #c0c0c0;
+  background: #c0c0c0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.theme-win95 .win95-title-bar {
+  background: linear-gradient(90deg, #000080 0%, #0000ff 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 2px 4px;
+  border-bottom: 1px solid #000040;
+}
+
+/* React Flow theming */
+.theme-light .react-flow__background {
+  background-color: #f9fafb;
+}
+
+.theme-win95 .react-flow__background {
+  background-color: #008080;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,.1) 2px,
+    rgba(255,255,255,.1) 4px
+  );
+}
